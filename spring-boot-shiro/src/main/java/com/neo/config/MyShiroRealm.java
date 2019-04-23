@@ -45,6 +45,10 @@ public class MyShiroRealm extends AuthorizingRealm {
         //实际项目中，这里可以根据实际情况做缓存，如果不做，Shiro自己也是有时间间隔机制，2分钟内不会重复执行该方法
         UserInfo userInfo = userInfoService.findByUsername(username);
         System.out.println("----->>userInfo="+userInfo);
+        UserInfo userInfo2 = new UserInfo();
+        System.out.println("----->>userInfo="+userInfo2);
+        //userInfo2.setUid(2);
+        //userInfoService.save(userInfo2);
         if(userInfo == null){
             return null;
         }
